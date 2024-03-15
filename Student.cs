@@ -23,6 +23,8 @@ namespace topic_9
 
             _studentNum = generator.Next(0, 999);
             _studentNum = (_studentNum + 555000);
+
+            GenerateEmail();
             
         }
         public string FirstName
@@ -75,7 +77,7 @@ namespace topic_9
         }
         private void GenerateEmail()
         {
-            _email = (_firstName.Substring(0, 3) + _lastName.Substring(0, 3) + (_studentNum % 1000) + "@gotvdsb.ca");
+            _email = (_lastName.Substring(0, 3).ToLower() + _firstName.Substring(0, 3).ToLower() + (_studentNum % 1000) + "@gotvdsb.ca");
         }
     }
 }
